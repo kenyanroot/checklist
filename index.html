@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Checklist</title>
+	<style>
+		/* Style the checklist items */
+		li {
+			margin-bottom: 10px;
+			font-size: 18px;
+			list-style-type: none;
+			transition: all 0.3s ease-in-out;
+			transform-origin: left center;
+		}
+		
+		/* Style the checkbox */
+		input[type="checkbox"] {
+			margin-right: 10px;
+			transform: scale(1.5);
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			transform-origin: left center;
+		}
+		
+		/* Style the checked checkbox */
+		input[type="checkbox"]:checked:before {
+			content: "✓";
+			color: green;
+			font-size: 18px;
+			position: absolute;
+			margin-left: -30px;
+		}
+		
+		/* Style the checklist header */
+		h1 {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+		
+		/* Style the checked checklist item */
+		.checked {
+			text-decoration: line-through;
+			opacity: 0.5;
+			transform: scale(0.9);
+			cursor: default;
+		}
+		
+		/* Center the checklist */
+		ol {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Checklist</h1>
+	<ol>
+		<li><input type="checkbox">Create campaign</li>
+		<li><input type="checkbox">Record Campaign</li>
+		<li><input type="checkbox">Drag to import</li>
+		<li><input type="checkbox">Click to import</li>
+		<li><input type="checkbox">File is a CSV file</li>
+		<li><input type="checkbox">First name is compulsory</li>
+		<li><input type="checkbox">Last name is not compulsory</li>
+		<li><input type="checkbox">Email is not compulsory</li>
+		<li><input type="checkbox">Linkedin url is compulsory</li>
+		<li><input type="checkbox">Linkedin url is a URL</li>
+		<li><input type="checkbox">Email is an email</li>
+		<li><input type="checkbox">Single lead creating</li>
+		<li><input type="checkbox">Single lead URL validation</li>
+		<li><input type="checkbox">Loader working</li>
+		<li><input type="checkbox">Videos refreshing after finished rendering</li>
+		<li><input type="checkbox">Videos listed</li>
+		<li><input type="checkbox">Settings updated</li>
+		<li><input type="checkbox">Campaign deleted</li>
+		<li><input type="checkbox">Subscription cards working</li>
+	</ol>
+	
+	<script>
+		// Add a click event listener to the checkbox to toggle the "checked" class
+		var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+		for (var i = 0; i < checkboxes.length; i++) {
+			checkboxes[i].addEventListener('click', function() {
+				this.parentNode.classList.toggle('checked');
+			});
+		}
+	</script>
+</body>
+</html>
